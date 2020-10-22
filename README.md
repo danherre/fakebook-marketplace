@@ -8,3 +8,7 @@ source env/bin/activate
 To deactivate run:
 deactivate
 
+To install dependencies run: 
+pip install -e . 
+
+To add dependencies, add your dependency to setup.py
