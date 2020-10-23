@@ -10,9 +10,13 @@ CREATE TABLE users(
   PRIMARY KEY(username)
 );
 
+CREATE TABLE items(
+);
+
 CREATE TABLE transactions(
   transactionid INTEGER NOT NULL,
   price DOUBLE(6, 2) NOT NULL,
+  title VARCHAR(64) NOT NULL,
   filename VARCHAR(64) NOT NULL,
   owner VARCHAR(20) NOT NULL,
   accepter VARCHAR(20),
