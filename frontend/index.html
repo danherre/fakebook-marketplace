@@ -1,7 +1,9 @@
 <html>
 <title>Fakebook Marketplace</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="carousel.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand">Fakebook Marketplace</a>
@@ -52,180 +54,98 @@
         </div>
     </nav>
     <!-- Near you section -->
-    <div class="container my-4">
-
-        <p><strong>Detailed documentation and more examples of Bootstrap grid you can find in our <a href="https://mdbootstrap.com/docs/jquery/javascript/carousel/"
-              target="_blank">Bootstrap Carousel Docs</a>.</p>
-
-        <hr class="my-4">
-
-        <!--Carousel Wrapper-->
-        <h1 align="center">Things near you</h1>
-        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-
-          <!--Controls-->
-          <div class="controls-top">
-            <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-            <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+    <section>
+      <div class="rt-container">
+        <div class="col-rt-12">
+          <div class='demo-container'>
+            <div class='carousel'>
+              <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel' type='radio'>
+              <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
+              <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel' type='radio'>
+              <div class='carousel__controls'>
+                <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-2'>
+                  👉
+                </label>
+              </div>
+              <div class='carousel__controls'>
+                <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-1'>
+                  👈
+                </label>
+              </div>
+              <div class='carousel__screen'>
+                <div class='carousel__track'>
+                  <div class="carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3">
+                    <div class="card mb-2">
+                      <img class="card-img-top" src="images/mic.jpeg "
+                        alt="Mic Photo">
+                      <div class="card-body">
+                        <h4 class="card-title">Microphone</h4>
+                        <p>$30/day</p>
+                        <a class="btn btn-primary">Contact renter</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                    <div class="card mb-2">
+                      <img class="card-img-top" src="images/guitar.jpg"
+                        alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Guitar</h4>
+                        <p class="card-text">$15/hour</p>
+                        <a class="btn btn-primary">Contact renter</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                    <div class="card mb-2">
+                      <img class="card-img-top" src="images/tools.jpg"
+                        alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Toolbox</h4>
+                        <p class="card-text">$20/day</p>
+                        <a class="btn btn-primary">Contact renter</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                    <div class="card mb-2">
+                      <img class="card-img-top" src="images/paddle.jpg"
+                        alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Paddle board</h4>
+                        <p class="card-text">$40/day</p>
+                        <a class="btn btn-primary">Contact renter</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                    <div class="card mb-2">
+                      <img class="card-img-top" src="images/paddle.jpg"
+                        alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Paddle board</h4>
+                        <p class="card-text">$40/day</p>
+                        <a class="btn btn-primary">Contact renter</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                    <div class="card mb-2">
+                      <img class="card-img-top" src="images/bike.jpg"
+                        alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">Bike</h4>
+                        <p class="card-text">$50/day</p>
+                        <a class="btn btn-primary">Contact renter</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <!--/.Controls-->
-
-          <!--Indicators-->
-          <ol class="carousel-indicators">
-            <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-            <li data-target="#multi-item-example" data-slide-to="1" class="active"></li>
-            <li data-target="#multi-item-example" data-slide-to="2"></li>
-          </ol>
-          <!--/.Indicators-->
-
-          <!--Slides-->
-          <div class="carousel-inner" role="listbox">
-
-            <!--First slide-->
-            <div class="carousel-item active">
-
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="card mb-2">
-                    <img class="card-img-top" src="images/mic.jpeg "
-                      alt="Mic Photo">
-                    <div class="card-body">
-                      <h4 class="card-title">Microphone</h4>
-                      <p class="card-text">$30/day</p>
-                      <a class="btn btn-primary">Contact renter</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4 clearfix d-none d-md-block">
-                  <div class="card mb-2">
-                    <img class="card-img-top" src="images/guitar.jpg"
-                      alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">Guitar</h4>
-                      <p class="card-text">$15/hour</p>
-                      <a class="btn btn-primary">Contact renter</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4 clearfix d-none d-md-block">
-                  <div class="card mb-2">
-                    <img class="card-img-top" src="images/tools.jpg"
-                      alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">Toolbox</h4>
-                      <p class="card-text">$20/day</p>
-                      <a class="btn btn-primary">Contact renter</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <!--/.First slide-->
-
-            <!--Second slide-->
-            <div class="carousel-item">
-
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="card mb-2">
-                    <img class="card-img-top" src="images/paddle.jpg"
-                      alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                      <a class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4 clearfix d-none d-md-block">
-                  <div class="card mb-2">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
-                      alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                      <a class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4 clearfix d-none d-md-block">
-                  <div class="card mb-2">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
-                      alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                      <a class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <!--/.Second slide-->
-
-            <!--Third slide-->
-            <div class="carousel-item">
-
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="card mb-2">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
-                      alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                      <a class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4 clearfix d-none d-md-block">
-                  <div class="card mb-2">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
-                      alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                      <a class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-4 clearfix d-none d-md-block">
-                  <div class="card mb-2">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
-                      alt="Card image cap">
-                    <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                      <a class="btn btn-primary">Button</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <!--/.Third slide-->
-
-          </div>
-          <!--/.Slides-->
-
         </div>
-        <!--/.Carousel Wrapper-->
-
-
       </div>
+    </section>
 </body>
 </html>
