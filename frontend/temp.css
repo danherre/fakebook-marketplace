@@ -1,0 +1,17 @@
+.reviewbox {
+  background-color: #F3F3F3;
+  width: 300px;
+  border: 15px solid #6EC4BE;
+  margin: 20px;
+  border-radius: 25px;
+}
+
+.reviewbox-user{
+  padding-left: 30px;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.reviewbox-text{
+  padding-left: 45px;
+  font-family: "Lucida Console", Monaco, monospace;
+}
