@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>edit_account</title>
+    </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body>
+        <h4 style="text-align:left;">
+            <a href="/">FakeBook Marketplace</a> 
+                <a>login</a> 
+        <hr>
+        <div>
+            &nbsp&nbsp&nbsp&nbsp <img src="images/tempProfilePic.png" alt="teacher picture" style="width:32px;height:32px;"> SampleUser
+            <br>
+            <br>
+                <form action="/accounts/edit/" method="post" enctype="multipart/form-data">
+                    &nbsp&nbsp&nbsp&nbsp Photo <input type="file" name="file">
+                    <br>
+                    <br>
+                    &nbsp&nbsp&nbsp&nbsp Name <input type="text" name="fullname" value="Sample User"/>
+                    <br>
+                    <br>
+                    &nbsp&nbsp&nbsp&nbsp Email <input type="text" name="email" value="SampleUser@gmail.com"/>
+                    <br>
+                    <br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="submit" name="update" value="Submit"/>
+                </form>
+            <br>
+            &nbsp&nbsp&nbsp&nbsp <a href="/accounts/password/">Change password</a> 
+            <br>
+            <br>
+            &nbsp&nbsp&nbsp&nbsp <a href="/accounts/delete/">Delete account</a>
+        </div>
+    </body>
+</html>
