@@ -9,15 +9,15 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-auto"></ul>
-                <form class="form-inline my-2">
-                    <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline" display="block" text-align:"center">
+                    <input size="30" class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2" type="submit">Search</button>
                 </form>
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto mr-auto">
                 <li class="nav-item">
                 <a class="nav-link">Log In</a>
                 </li>
@@ -33,40 +33,43 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-auto"></ul>
-                <form class="form-inline my-2">
-                    <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline my-2" text-align:"center">
+                    <input size="30" class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2" type="submit">Search</button>
                 </form>
             </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                <a class="nav-link">Sample User</a>
-                </li>
+            <ul class="navbar-nav ml-auto mr-auto">
+              <li class="nav-item">
+              <a class="nav-link">Sample User</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link">Sign Out</a>
+              </li>
             </ul>
         </div>
     </nav>
     <!-- Near you section -->
     <div class="container my-4">
-    
+
         <p><strong>Detailed documentation and more examples of Bootstrap grid you can find in our <a href="https://mdbootstrap.com/docs/jquery/javascript/carousel/"
               target="_blank">Bootstrap Carousel Docs</a>.</p>
-    
+
         <hr class="my-4">
-    
+
         <!--Carousel Wrapper-->
         <h1 align="center">Things near you</h1>
         <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-    
+
           <!--Controls-->
           <div class="controls-top">
             <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
             <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
           </div>
           <!--/.Controls-->
-    
+
           <!--Indicators-->
           <ol class="carousel-indicators">
             <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
@@ -74,13 +77,13 @@
             <li data-target="#multi-item-example" data-slide-to="2"></li>
           </ol>
           <!--/.Indicators-->
-    
+
           <!--Slides-->
           <div class="carousel-inner" role="listbox">
-    
+
             <!--First slide-->
             <div class="carousel-item active">
-    
+
               <div class="row">
                 <div class="col-md-4">
                   <div class="card mb-2">
@@ -93,7 +96,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="col-md-4 clearfix d-none d-md-block">
                   <div class="card mb-2">
                     <img class="card-img-top" src="images/guitar.jpg"
@@ -105,7 +108,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="col-md-4 clearfix d-none d-md-block">
                   <div class="card mb-2">
                     <img class="card-img-top" src="images/tools.jpg"
@@ -118,13 +121,13 @@
                   </div>
                 </div>
               </div>
-    
+
             </div>
             <!--/.First slide-->
-    
+
             <!--Second slide-->
             <div class="carousel-item">
-    
+
               <div class="row">
                 <div class="col-md-4">
                   <div class="card mb-2">
@@ -138,7 +141,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="col-md-4 clearfix d-none d-md-block">
                   <div class="card mb-2">
                     <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
@@ -151,7 +154,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="col-md-4 clearfix d-none d-md-block">
                   <div class="card mb-2">
                     <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
@@ -165,13 +168,13 @@
                   </div>
                 </div>
               </div>
-    
+
             </div>
             <!--/.Second slide-->
-    
+
             <!--Third slide-->
             <div class="carousel-item">
-    
+
               <div class="row">
                 <div class="col-md-4">
                   <div class="card mb-2">
@@ -185,7 +188,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="col-md-4 clearfix d-none d-md-block">
                   <div class="card mb-2">
                     <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
@@ -198,7 +201,7 @@
                     </div>
                   </div>
                 </div>
-    
+
                 <div class="col-md-4 clearfix d-none d-md-block">
                   <div class="card mb-2">
                     <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
@@ -212,17 +215,17 @@
                   </div>
                 </div>
               </div>
-    
+
             </div>
             <!--/.Third slide-->
-    
+
           </div>
           <!--/.Slides-->
-    
+
         </div>
         <!--/.Carousel Wrapper-->
-    
-    
+
+
       </div>
 </body>
 </html>
