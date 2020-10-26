@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>user_profile</title>
+    </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body>
+        <div id="header">
+            <h4 style="text-align:left;">
+            <a href="/">FakeBook Marketplace</a> 
+                <a>login</a> 
+            </h4>
+        </div>
+        <div>
+            <h2>&nbsp&nbsp&nbsp&nbsp SampleUser</h2>
+            
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="edit.html">Edit profile</a> 
+            <br>
+            <br>
+            <form action="index.html">
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="submit" value="Logout" />
+            </form>
+            <br>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSample User</p>
+        </div>
+        <!-- this is temp code for uploading new transaction-->
+        <form action="/u/{{userProfile}}/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <br>
+            <br>
+            Price <input type="text" name="price"/>
+            <br>
+            <br>
+            Description <input type="text" name="description"/>
+            <br>
+            <br>
+            <input type="submit" name="create_post" value="Upload new transaction"/>
+        </form>
+
+
+        <div>
+        <!-- Once the carousel works put carousel code here -->
+        </div>
+
+        <div>
+            
+        </div>
+    </body>
+</html>
