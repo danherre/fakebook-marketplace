@@ -121,3 +121,10 @@ input[type="text"]::placeholder
 .my-float{
     margin-top:22px;
 }
+
+.nav-options {
+    position: absolute;
+    align-items: flex-end;
+    right: 0px;
+    font-size: 60px;
+}
