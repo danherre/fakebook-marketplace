@@ -128,3 +128,16 @@ input[type="text"]::placeholder
     right: 0px;
     font-size: 60px;
 }
+
+.search-by-category-buttons {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.search-by-category-buttons .btn {
+    color: #ff7850;
+}
+
+.search-by-category-buttons .material-icons {
+    font-size: 64px;
+}
