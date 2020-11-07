@@ -1,0 +1,78 @@
+#!/bin/bash
+# fbmarketplacedb
+
+# Stop on errors
+set -e
+
+# Create Function
+create() {
+
+  if [ -f "var/fbmarketplace.sqlite3" ]; then
+
+    echo "Error: database already exists"
+    exit 1
+  else
+
+    mkdir -p var/uploads
+    echo "+ mkdir -p var/uploads"
+
+    sqlite3 var/fbmarketplace.sqlite3 < sql/schema.sql
+    echo "+ sqlite3 var/fbmarketplace.sqlite3 < sql/schema.sql"
+
+    sqlite3 var/fbmarketplace.sqlite3 < sql/data.sql
+    echo "+ sqlite3 var/fbmarketplace.sqlite3 < sql/data.sql"
+
+    cp sql/uploads/* var/uploads/
+    echo "+ cp sql/uploads/* var/uploads/"
+  fi
+}
+
+# Destroy Function
+destroy() {
+  rm -rf var/fbmarketplace.sqlite3 var/uploads
+  echo "+ rm -rf var/fbmarketplace.sqlite3 var/uploads"
+}
+
+
+# Reset Function
+reset() {
+  destroy
+  create
+}
+
+dump() {
+  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM users;"
+  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM posts;"
+  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM following;"
+  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM comments;"
+  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM likes;"
+}
+
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 (create|destroy|reset|dump)"
+  exit 1
+fi
+
+# Parse argument.  $1 is the first argument
+case $1 in
+  "create")
+    create
+    ;;
+
+  "destroy")
+    destroy
+    ;;
+
+  "reset")
+    reset
+    ;;
+
+  "dump")
+    dump
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac

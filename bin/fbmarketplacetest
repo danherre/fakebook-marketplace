@@ -1,0 +1,17 @@
+#!/bin/bash
+# fbmarketplacetest
+
+# Stop on errors, print commands
+set -e
+set -x
+
+#run tests
+pytest -v tests
+
+#run python style checks
+pycodestyle fbmarketplace
+pydocstyle fbmarketplace
+pylint --reports=n --disable=cyclic-import --disable=no-member fbmarketplace
+
+#run html5validator
+bin/fbmarketplacetest-html
