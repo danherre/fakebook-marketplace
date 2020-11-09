@@ -24,6 +24,22 @@
           </div>
       </form>
     </div>
+    {% if loggedin %}
+    <div class="nav-options" style=float:right;">
+      <div class="user-link" style="position:relative; float:left;">
+        <a href="user.html" class="nav-link">
+          <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">person</i>
+          <p style="font-size: 12px; align-items: center;">{{username}}</p>
+        </a>
+      </div>
+      <div class="user-link" style="position:relative; float:right;">
+        <a href="index.html" class="nav-link">
+          <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">sensor_door</i>
+          <p style="font-size: 12px; align-items: center;">Sign out</p>
+        </a>
+      </div>
+    </div>
+    {% else %}
     <div class="nav-options" style=float:right;">
       <div class="user-link" style="position:relative; float:left;">
         <a href="login.html" class="nav-link">
@@ -38,6 +54,7 @@
         </a>
       </div>
     </div>
+    {% endif %}
   </nav>
     <!-- Search by category section -->
     <div class="search-by-category">
@@ -195,5 +212,6 @@
         </div>
       </div>
     </section>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>
 </body>
 </html>
