@@ -11,6 +11,13 @@ CREATE TABLE users(
 );
 
 CREATE TABLE items(
+  owner VARCHAR(20) NOT NULL,
+  description VARCHAR(256) NOT NULL,
+  image VARCHAR(64) NOT NULL,
+  itemid INTEGER NOT NULL,
+  Posted DATE DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  PRIMARY KEY(transactionid),
+  FOREIGN KEY(owner) REFERENCES users(username) ON DELETE CASCADE
 );
 
 CREATE TABLE transactions(
