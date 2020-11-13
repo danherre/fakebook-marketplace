@@ -56,3 +56,39 @@ def get_resources():
     context["url"] = flask.request.path
 
     return flask.jsonify(**context)
+
+@fbmarketplace.app.route('/api/v1/testusers', methods=["GET"])
+def test():
+    """Test."""
+    context = {}
+
+    connection = fbmarketplace.model.get_db()
+    cursor = connection.execute('''SELECT * FROM users''')
+    users = cursor.fetchall()
+
+    context["data"] = users
+    return flask.jsonify(**context), 201
+
+@fbmarketplace.app.route('/api/v1/testitems', methods=["GET"])
+def testitems():
+    """Test."""
+    context = {}
+
+    connection = fbmarketplace.model.get_db()
+    cursor = connection.execute('''SELECT * FROM items''')
+    items = cursor.fetchall()
+
+    context["data"] = items
+    return flask.jsonify(**context), 201
+
+@fbmarketplace.app.route('/api/v1/testreviews', methods=["GET"])
+def testreviews():
+    """Test."""
+    context = {}
+
+    connection = fbmarketplace.model.get_db()
+    cursor = connection.execute('''SELECT * FROM reviews''')
+    reviews = cursor.fetchall()
+
+    context["data"] = reviews
+    return flask.jsonify(**context), 201
