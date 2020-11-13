@@ -1,29 +1,29 @@
-INSERT INTO items(itemid, owner, name, description, price, image, available)
-VALUES (1, 'mgropper', 'Apple Computer', '1 year old MacBook Pro', 100, 'apple.jpg', True);
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (1, 'mgropper', 'Apple Computer', '1 year old MacBook Pro', 100, 'apple.jpg', True, 'Tech');
 
-INSERT INTO items(itemid, owner, name, description, price, image, available)
-VALUES (2, 'amanzhan', 'Bicycle', 'Old bike', 10, 'bike.jpg', True);
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (2, 'amanzhan', 'Bicycle', 'Old bike', 10, 'bike.jpg', True, 'Sports');
 
-INSERT INTO items(itemid, owner, name, description, price, image, available)
-VALUES (3, 'etkoren', 'Camera', '5 year old Canon DSLR', 25, 'camera.jpeg', True);
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (3, 'etkoren', 'Camera', '5 year old Canon DSLR', 25, 'camera.jpeg', True, 'Tech');
 
-INSERT INTO items(itemid, owner, name, description, price, image, available)
-VALUES (4, 'peteryu', 'Guitar', 'This is a vintage Yamaha guitar in prime condition.', 100, 'guitar.jpg', True);
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (4, 'peteryu', 'Guitar', 'This is a vintage Yamaha guitar in prime condition.', 100, 'guitar.jpg', True, 'Music');
 
-INSERT INTO items(itemid, owner, name, description, price, image, available)
-VALUES (5, 'danherre', 'Microphone', 'Unused blue yeti microphone', 50, 'mic.jpeg', True);
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (5, 'danherre', 'Microphone', 'Unused blue yeti microphone', 50, 'mic.jpeg', True, 'Tech');
 
-INSERT INTO items(itemid, owner, name, description, price, image, available)
-VALUES (6, 'mgropper', 'Motorcyle', '2018 Harley Davidson', 150, 'motorcycle.jpeg', True);
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (6, 'mgropper', 'Motorcyle', '2018 Harley Davidson', 150, 'motorcycle.jpeg', True, 'Cars');
 
-INSERT INTO items(itemid, owner, name, description, price, image, available)
-VALUES (7, 'amanzhan', 'Paddle Boards', 'Set of 3 paddle boards', 100, 'paddle.jpg', True);
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (7, 'amanzhan', 'Paddle Boards', 'Set of 3 paddle boards', 100, 'paddle.jpg', True, 'Sports');
 
-INSERT INTO items(itemid, owner, name, description, price, image, available)
-VALUES (8, 'etkoren', 'Skateboard', 'Skateboard in decent condition', 20, 'skateboard.jpeg', True);
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (8, 'etkoren', 'Skateboard', 'Skateboard in decent condition', 20, 'skateboard.jpeg', True, 'Sports');
 
-INSERT INTO items(itemid, owner, name, description, price, image, available)
-VALUES (9, 'peteryu', 'Toolbox', 'Set of tools containing a hammer, wrenches, pliers, and a screwdriver', 20, 'tools.jpg', True);
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (9, 'peteryu', 'Toolbox', 'Set of tools containing a hammer, wrenches, pliers, and a screwdriver', 20, 'tools.jpg', True, 'Tools');
 
 
 INSERT INTO reviews(reviewid, writer, writee, review)
