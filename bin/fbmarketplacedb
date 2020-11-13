@@ -16,14 +16,14 @@ create() {
     mkdir -p var/uploads
     echo "+ mkdir -p var/uploads"
 
-    sqlite3 var/fbmarketplace.sqlite3 < sql/schema.sql
-    echo "+ sqlite3 var/fbmarketplace.sqlite3 < sql/schema.sql"
+    sqlite3 var/fbmarketplace.sqlite3 < db/schema.sql
+    echo "+ sqlite3 var/fbmarketplace.sqlite3 < db/schema.sql"
 
-    sqlite3 var/fbmarketplace.sqlite3 < sql/data.sql
-    echo "+ sqlite3 var/fbmarketplace.sqlite3 < sql/data.sql"
+    sqlite3 var/fbmarketplace.sqlite3 < db/data.sql
+    echo "+ sqlite3 var/fbmarketplace.sqlite3 < db/data.sql"
 
-    cp sql/uploads/* var/uploads/
-    echo "+ cp sql/uploads/* var/uploads/"
+    cp db/uploads/* var/uploads/
+    echo "+ cp db/uploads/* var/uploads/"
   fi
 }
 
@@ -42,10 +42,8 @@ reset() {
 
 dump() {
   sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM users;"
-  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM posts;"
-  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM following;"
-  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM comments;"
-  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM likes;"
+  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM items;"
+  sqlite3 var/fbmarketplace.sqlite3 "SELECT * FROM reviews;"
 }
 
 

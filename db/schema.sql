@@ -6,31 +6,21 @@ CREATE TABLE users(
   email VARCHAR(40) NOT NULL,
   filename VARCHAR(64) NOT NULL,
   password VARCHAR(256) NOT NULL,
+  rating FLOAT NOT NULL,
   created DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
   PRIMARY KEY(username)
 );
 
 CREATE TABLE items(
-  owner VARCHAR(20) NOT NULL,
-  description VARCHAR(256) NOT NULL,
-  image VARCHAR(64) NOT NULL,
   itemid INTEGER NOT NULL,
-  Posted DATE DEFAULT CURRENT_TIMESTAMP NOT NULL,
-  PRIMARY KEY(transactionid),
-  FOREIGN KEY(owner) REFERENCES users(username) ON DELETE CASCADE
-);
-
-CREATE TABLE transactions(
-  transactionid INTEGER NOT NULL,
-  price DOUBLE(6, 2) NOT NULL,
-  title VARCHAR(64) NOT NULL,
-  filename VARCHAR(64) NOT NULL,
   owner VARCHAR(20) NOT NULL,
-  accepter VARCHAR(20),
+  name VARCHAR(40) NOT NULL,
   description VARCHAR(256) NOT NULL,
-  created DATE DEFAULT CURRENT_TIMESTAMP NOT NULL,
-  PRIMARY KEY(transactionid),
-  FOREIGN KEY (accepter) REFERENCES users(username),
+  price FLOAT NOT NULL,
+  image VARCHAR(64) NOT NULL,
+  posted DATE DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  available BOOLEAN NOT NULL,
+  PRIMARY KEY(itemid),
   FOREIGN KEY(owner) REFERENCES users(username) ON DELETE CASCADE
 );
 
@@ -38,12 +28,10 @@ CREATE TABLE reviews(
   reviewid INTEGER NOT NULL,
   writer VARCHAR(20) NOT NULL,
   writee VARCHAR(20) NOT NULL,
-  text VARCHAR(1024) NOT NULL,
+  review VARCHAR(1024) NOT NULL,
+  rating INTEGER,
   created DATE DEFAULT CURRENT_TIMESTAMP NOT NULL,
   PRIMARY KEY(reviewid),
   FOREIGN KEY(writer) REFERENCES users(username) ON DELETE CASCADE,
   FOREIGN KEY(writee) REFERENCES users(username) ON DELETE CASCADE
 );
-
-
-
