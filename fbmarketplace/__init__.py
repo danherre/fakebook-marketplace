@@ -21,3 +21,4 @@ app.config.from_envvar('FBMARKETPLACE_SETTINGS', silent=True)
 # going to tell pylint and pycodestyle to ignore this coding style violation.
 import fbmarketplace.views  # noqa: E402  pylint: disable=wrong-import-position
 import fbmarketplace.model  # noqa: E402  pylint: disable=wrong-import-position
+import fbmarketplace.api
