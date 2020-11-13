@@ -1,5 +1,5 @@
 """
-fbmarketplace index (main) view.
+fbmarketplace error handling.
 
 """
 import os
@@ -43,7 +43,7 @@ def not_found(error):
     }
     return flask.jsonify(**context), 404
 
-@fbmarketplace.app.route('/api/v1/', methods=["GET"])
+@fbmarketplace.app.route('/api/', methods=["GET"])
 def get_resources():
     """Return resources."""
     if "username" not in flask.session:
@@ -51,13 +51,13 @@ def get_resources():
 
     context = {}
     # posts
-    context["posts"] = "/api/v1/p/"
+    context["posts"] = "/api/p/"
     # url
     context["url"] = flask.request.path
 
     return flask.jsonify(**context)
 
-@fbmarketplace.app.route('/api/v1/testusers', methods=["GET"])
+@fbmarketplace.app.route('/api/testusers', methods=["GET"])
 def test():
     """Test."""
     context = {}
@@ -69,7 +69,7 @@ def test():
     context["data"] = users
     return flask.jsonify(**context), 201
 
-@fbmarketplace.app.route('/api/v1/testitems', methods=["GET"])
+@fbmarketplace.app.route('/api/testitems', methods=["GET"])
 def testitems():
     """Test."""
     context = {}
@@ -81,7 +81,7 @@ def testitems():
     context["data"] = items
     return flask.jsonify(**context), 201
 
-@fbmarketplace.app.route('/api/v1/testreviews', methods=["GET"])
+@fbmarketplace.app.route('/api/testreviews', methods=["GET"])
 def testreviews():
     """Test."""
     context = {}
