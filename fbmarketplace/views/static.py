@@ -126,12 +126,12 @@ def delete():
         return flask.redirect(flask.url_for('login'))
 
     if flask.request.method == 'POST':
-        cursor = get_db().execute('''SELECT * FROM posts WHERE owner = '%s' '''
+        cursor = get_db().execute('''SELECT * FROM items WHERE owner = '%s' '''
                                   % flask.session['username'])
-        post_dict = cursor.fetchall()
-        for posts in post_dict:
-            post = posts['filename']
-            os.remove(os.path.join(fbmarketplace.app.config["UPLOAD_FOLDER"], post))
+        item_dict = cursor.fetchall()
+        for items in item_dict:
+            item = items['filename']
+            os.remove(os.path.join(fbmarketplace.app.config["UPLOAD_FOLDER"], item))
         cursor = get_db().execute('''SELECT * FROM users WHERE username = '%s'
                                   ''' % flask.session['username'])
         user_dict = cursor.fetchall()
@@ -167,7 +167,7 @@ def edit():
             dummy, suffix = os.path.splitext(file.filename)
             hash_filename_basename = hash_txt + suffix
             hash_filename = os.path.join(
-                insta485.app.config["UPLOAD_FOLDER"],
+                fbmarketplace.app.config["UPLOAD_FOLDER"],
                 hash_filename_basename
             )
             # Move temp file to permanent location
@@ -244,3 +244,12 @@ def password():
         "logname": flask.session['username']
     }
     return flask.render_template("password.html", **data)
+
+@fbmarketplace.app.route('/categories/<category>/', methods=['GET'])
+def get_items_by_user(category):
+    cursor = get_db().execute('''SELECT * FROM items WHERE category = '%s' '''
+                              % (category))
+    items_dict = cursor.fetchall()
+    data = {}
+    data[items] = items_dict
+    return flask.render_template("categories.html", **data)
