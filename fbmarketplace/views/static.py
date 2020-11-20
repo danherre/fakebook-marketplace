@@ -251,5 +251,5 @@ def get_items_by_user(category):
                               % (category))
     items_dict = cursor.fetchall()
     data = {}
-    data[items] = items_dict
-    return flask.render_template("categories.html", **data)
+    data["items"] = items_dict
+    return flask.jsonify(**data)
