@@ -3,7 +3,6 @@ import shutil
 import tempfile
 import hashlib
 import flask
-#import arrow
 import fbmarketplace
 from fbmarketplace.model import get_db
 
@@ -46,7 +45,7 @@ def login():
             return flask.redirect(flask.url_for('login'))
 
         flask.session['username'] = flask.request.form['username']
-        return flask.redirect(flask.url_for('show_index'))
+        return flask.redirect(flask.url_for('index'))
     data = {}
     return flask.render_template("login.html", **data)
 
@@ -58,7 +57,7 @@ def logout():
     flask.session.clear()
     return flask.redirect(flask.url_for('login'))
 
-#  ------- Create -------  #
+#  ------- Create Account -------  #
 @fbmarketplace.app.route('/accounts/create/', methods=['GET', 'POST'])
 def create():
     """Render create."""
@@ -113,12 +112,12 @@ def create():
                                      "$".join([algorithm, salt,
                                                password_hash]), 0.0))
         flask.session['username'] = flask.request.form['username']
-        return flask.redirect(flask.url_for('show_index'))
+        return flask.redirect(flask.url_for('index'))
     data = {}
     return flask.render_template("create.html", **data)
 
 
-#  ------- Delete -------  #
+#  ------- Delete Account -------  #
 @fbmarketplace.app.route('/accounts/delete/', methods=['GET', 'POST'])
 def delete():
     """Render delete."""
@@ -147,7 +146,7 @@ def delete():
     return flask.render_template("delete.html", **data)
 
 
-#  ------- Edit -------  #
+#  ------- Edit Account -------  #
 @fbmarketplace.app.route('/accounts/edit/', methods=['GET', 'POST'])
 def edit():
     """Render edit."""
@@ -199,7 +198,7 @@ def edit():
     return flask.render_template("edit.html", **data)
 
 
-#  ------- Password -------  #
+#  ------- Change Password -------  #
 @fbmarketplace.app.route('/accounts/password/', methods=['GET', 'POST'])
 def password():
     """Render password."""
@@ -244,12 +243,3 @@ def password():
         "logname": flask.session['username']
     }
     return flask.render_template("password.html", **data)
-
-@fbmarketplace.app.route('/categories/<category>/', methods=['GET'])
-def get_items_by_user(category):
-    cursor = get_db().execute('''SELECT * FROM items WHERE category = '%s' '''
-                              % (category))
-    items_dict = cursor.fetchall()
-    data = {}
-    data["items"] = items_dict
-    return flask.jsonify(**data)
