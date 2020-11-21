@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>create_user</title>
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="carousel.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light loggedout">
+        <a href="/" class="nav-link"><img src="images/logo2.png" height="120" width="160"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="float:left;">
+          <div id="cover">
+            <form method="get" action="">
+              <div class="tb">
+                <div class="td">
+                  <input type="text" placeholder="What are you looking for?" required>
+                </div>
+                <div class="td">
+                  <button type="submit" style="margin-right:0;">
+                    <i class="material-icons" style="font-size:80px;"=>search</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        <div class="nav-options" style=float:right;">
+          <div class="user-link" style="position:relative; float:left;">
+            <a href="/accounts/login/" class="nav-link">
+              <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">login</i>
+              <p style="font-size: 12px; align-items: center;">Log in</p>
+            </a>
+          </div>
+          <div class="user-link" style="position:relative; float:right;">
+            <a href="/accounts/create/" class="nav-link">
+              <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">person_add</i>
+              <p style="font-size: 12px; align-items: center;">Create account</p>
+            </a>
+          </div>
+        </div>
+      </nav>
+        <hr>
+        <div>
+            <form action="/accounts/create/" method="post" enctype="multipart/form-data">
+                    &nbsp&nbsp&nbsp&nbsp Photo &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="file" name="file">
+                    <br>
+                    <br>
+                    &nbsp&nbsp&nbsp&nbsp Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="fullname"/>
+                    <br>
+                    <br>                    
+                    &nbsp&nbsp&nbsp&nbsp Username <input type="text" name="username"/>
+                    <br>
+                    <br>
+                    &nbsp&nbsp&nbsp&nbsp Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="email"/>
+                    <br>
+                    <br>
+                    &nbsp&nbsp&nbsp&nbsp Password <input type="password" name="password"/>
+                    <br>
+                    <br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="submit" name="signup" value="sign up"/>
+                </form>
+                <br>
+                &nbsp&nbsp&nbsp&nbsp <a>Have an account? &nbsp</a><a href="/accounts/login/"><b>Log in</b></a>
+
+        </div>
+    </body>
+</html>
