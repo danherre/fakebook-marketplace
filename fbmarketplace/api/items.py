@@ -74,28 +74,32 @@ def items_by_user(username):
     else: # TODO: Figure out how to save file
         if "username" not in session:
             abort(403)
-        dummy, temp_filename = tempfile.mkstemp()
-        image = flask.request.files['image']
-        image.save(temp_filename)
-        hash_txt = sha256sum(temp_filename)
-        dummy, suffix = os.path.splitext(image.filename)
-        hash_filename_basename = hash_txt + suffix
-        hash_filename = os.path.join(
-            fbmarketplace.app.config["UPLOAD_FOLDER"],
-            hash_filename_basename
-        )
-        shutil.move(temp_filename, hash_filename)
-        cur = connection.execute(
-            "INSERT INTO items (owner, name, description, price, available, image) VALUES ('" + 
-            username + "', " + 
-            flask.request.form['name'] + "', '" + 
-            flask.request.form['description'] + "', '" + 
-            flask.request.form['price'] + "', '" + 
-            flask.request.form['available'] + "', '" + 
-            hash_filename_basename + "')"
-        )
-        response['Success'] = True
-
+        if "create_post" in flask.request.form:
+            dummy, temp_filename = tempfile.mkstemp()
+            image = flask.request.files['image']
+            image.save(temp_filename)
+            hash_txt = sha256sum(temp_filename)
+            dummy, suffix = os.path.splitext(image.filename)
+            hash_filename_basename = hash_txt + suffix
+            hash_filename = os.path.join(
+                fbmarketplace.app.config["UPLOAD_FOLDER"],
+                hash_filename_basename
+            )
+            shutil.move(temp_filename, hash_filename)
+            cur = connection.execute(
+                "INSERT INTO items (owner, name, description, price, available, image) VALUES ('" + 
+                username + "', " + 
+                flask.request.form['name'] + "', '" + 
+                flask.request.form['description'] + "', '" + 
+                flask.request.form['price'] + "', '" + 
+                flask.request.form['available'] + "', '" + 
+                hash_filename_basename + "')"
+            )
+            response['Success'] = True
+        else: #delete a post
+            cur = connection.execute(
+                "DELETE FROM items"
+            )
     return flask.jsonify(**response)
 
 
