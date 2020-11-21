@@ -26,33 +26,33 @@ INSERT INTO items(itemid, owner, name, description, price, image, available, cat
 VALUES (9, 'peteryu', 'Toolbox', 'Set of tools containing a hammer, wrenches, pliers, and a screwdriver', 20, 'tools.jpg', True, 'Tools');
 
 
-INSERT INTO reviews(reviewid, writer, writee, review)
-VALUES (1, 'amanzhan', 'mgropper', 'This product was horrible! Never trust this person.');
+INSERT INTO reviews(reviewid, writer, writee, review, rating)
+VALUES (1, 'amanzhan', 'mgropper', 'This product was horrible! Never trust this person.', 2);
 
 INSERT INTO reviews(reviewid, writer, writee, review, rating)
 VALUES (2, 'etkoren', 'danherre', 'Would be rated higher, if I could waste more money.', 7);
 
-INSERT INTO reviews(reviewid, writer, writee, review)
-VALUES (3, 'peteryu', 'etkoren', 'This is a bot account, dont trust.');
+INSERT INTO reviews(reviewid, writer, writee, review, rating)
+VALUES (3, 'peteryu', 'etkoren', 'This is a bot account, dont trust.', 1);
 
-INSERT INTO reviews(reviewid, writer, writee, review)
-VALUES (4, 'danherre', 'amanzhan', 'Ok.');
+INSERT INTO reviews(reviewid, writer, writee, review, rating)
+VALUES (4, 'danherre', 'amanzhan', 'Ok.', 5);
 
-INSERT INTO reviews(reviewid, writer, writee, review)
-VALUES (5, 'mgropper', 'peteryu', 'This person lied in their review, I am totally legit!');
+INSERT INTO reviews(reviewid, writer, writee, review, rating)
+VALUES (5, 'mgropper', 'peteryu', 'This person lied in their review, I am totally legit!', 1);
 
 
-INSERT INTO users(username, fullname, email, filename, password, rating)
-VALUES ('mgropper', 'Matt Gropper', 'mgropper@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8', 0.0);
+INSERT INTO users(username, fullname, email, filename, password)
+VALUES ('mgropper', 'Matt Gropper', 'mgropper@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8');
 
-INSERT INTO users(username, fullname, email, filename, password, rating)
-VALUES ('amanzhan', 'Amanda Zhang', 'amanzhan@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8', 0.0);
+INSERT INTO users(username, fullname, email, filename, password)
+VALUES ('amanzhan', 'Amanda Zhang', 'amanzhan@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8');
 
-INSERT INTO users(username, fullname, email, filename, password, rating)
-VALUES ('etkoren', 'Etan Koren', 'etkoren@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8', 0.0);
+INSERT INTO users(username, fullname, email, filename, password)
+VALUES ('etkoren', 'Etan Koren', 'etkoren@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8');
 
-INSERT INTO users(username, fullname, email, filename, password, rating)
-VALUES ('peteryu', 'Peter Yu', 'peteryu@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8', 0.0);
+INSERT INTO users(username, fullname, email, filename, password)
+VALUES ('peteryu', 'Peter Yu', 'peteryu@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8');
 
-INSERT INTO users(username, fullname, email, filename, password, rating)
-VALUES ('danherre', 'Danny Herrerias', 'danherre@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8', 0.0);
+INSERT INTO users(username, fullname, email, filename, password)
+VALUES ('danherre', 'Danny Herrerias', 'danherre@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8');
