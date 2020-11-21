@@ -9,10 +9,11 @@ from fbmarketplace.model import get_db
 #  ------- Feed -------  #
 @fbmarketplace.app.route('/', methods=['GET'])
 def index():
-    data = {}
+    if 'username' not in flask.session:
+        return flask.redirect(flask.url_for('login'))
 
-    if 'username' in flask.session:
-        data["username"] = flask.session['username']
+    data = {}
+    data["username"] = flask.session['username']
 
     cursor = get_db().execute('''SELECT * FROM items ORDER BY itemid LIMIT 8''')
     item_dict = cursor.fetchall()
@@ -44,10 +45,11 @@ def index():
 #  ------- Search -------  #
 @fbmarketplace.app.route('/search/', methods=['GET'])
 def search():
-    data = {}
+    if 'username' not in flask.session:
+        return flask.redirect(flask.url_for('login'))
 
-    if 'username' in flask.session:
-        data["username"] = flask.session['username']
+    data = {}
+    data["username"] = flask.session['username']
 
     item_list = []
     if flask.request.args.get('search') is not None:
@@ -82,10 +84,11 @@ def search():
 #  ------- Category Search -------  #
 @fbmarketplace.app.route('/categories/<category>/', methods=['GET'])
 def category_search(category):
-    data = {}
+    if 'username' not in flask.session:
+        return flask.redirect(flask.url_for('login'))
 
-    if 'username' in flask.session:
-        data["username"] = flask.session['username']
+    data = {}
+    data["username"] = flask.session['username']
 
     cursor = get_db().execute('''SELECT * FROM items WHERE category = '%s' ORDER BY itemid DESC LIMIT 8''' % category)
     item_dict = cursor.fetchall()
