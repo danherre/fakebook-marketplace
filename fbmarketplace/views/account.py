@@ -103,14 +103,14 @@ def create():
 
         cursor = get_db().execute('''INSERT INTO
                                      users(username, fullname, email,
-                                     filename, password, rating)
+                                     filename, password)
                                      VALUES ('%s', '%s', '%s', '%s', '%s', %d)'''
                                   % (flask.request.form['username'],
                                      flask.request.form['fullname'],
                                      flask.request.form['email'],
                                      hash_txt + suffix,
                                      "$".join([algorithm, salt,
-                                               password_hash]), 0.0))
+                                               password_hash])))
         flask.session['username'] = flask.request.form['username']
         return flask.redirect(flask.url_for('index'))
     data = {}

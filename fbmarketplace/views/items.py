@@ -9,13 +9,13 @@ from fbmarketplace.model import get_db
 #  ------- Feed -------  #
 @fbmarketplace.app.route('/', methods=['GET'])
 def index():
-    if 'username' not in flask.session:
-        return flask.redirect(flask.url_for('login'))
+    #if 'username' not in flask.session:
+        #return flask.redirect(flask.url_for('login'))
 
     data = {}
-    data["username"] = flask.session['username']
+    #data["username"] = flask.session['username']
 
-    cursor = get_db().execute('''SELECT * FROM items ORDER BY itemid LIMIT 8''')
+    cursor = get_db().execute('''SELECT * FROM items ORDER BY itemid DESC LIMIT 8''')
     item_dict = cursor.fetchall()
     item_list = []
     for item in item_dict:
@@ -31,16 +31,21 @@ def index():
         filename = cursor.fetchone()
         item["owner_img"] = filename["filename"]
 
-        cursor = get_db().execute('''SELECT rating FROM users
-            WHERE username = '%s' ''' % owner)
-        rating = cursor.fetchone()
-        item["rating"] = rating["rating"]
+        cursor = get_db().execute('''SELECT rating FROM reviews
+            WHERE writee = '%s' ''' % owner)
+        rating = cursor.fetchall()
+        sum = 0
+        num = 0
+        for rate in rating:
+            num += 1
+            sum += rate["rating"]
+        item["rating"] = sum/num
 
         item_list.append(item)
 
-    data["posts"] = item_list
+    data["items"] = item_list
 
-    return flask.render_template("index.html", **data)
+    return flask.jsonify(**data)
 
 #  ------- Search -------  #
 @fbmarketplace.app.route('/search/', methods=['GET'])
@@ -70,10 +75,15 @@ def search():
             filename = cursor.fetchone()
             item["owner_img"] = filename["filename"]
 
-            cursor = get_db().execute('''SELECT rating FROM users
-                WHERE username = '%s' ''' % owner)
-            rating = cursor.fetchone()
-            item["rating"] = rating["rating"]
+            cursor = get_db().execute('''SELECT rating FROM reviews
+                WHERE writee = '%s' ''' % owner)
+            rating = cursor.fetchall()
+            sum = 0
+            num = 0
+            for rate in rating:
+                num += 1
+                sum += rate["rating"]
+            item["rating"] = sum/num
 
             item_list.append(item)
 
@@ -106,10 +116,15 @@ def category_search(category):
         filename = cursor.fetchone()
         item["owner_img"] = filename["filename"]
 
-        cursor = get_db().execute('''SELECT rating FROM users
-            WHERE username = '%s' ''' % owner)
-        rating = cursor.fetchone()
-        item["rating"] = rating["rating"]
+        cursor = get_db().execute('''SELECT rating FROM reviews
+            WHERE writee = '%s' ''' % owner)
+        rating = cursor.fetchall()
+        sum = 0
+        num = 0
+        for rate in rating:
+            num += 1
+            sum += rate["rating"]
+        item["rating"] = sum/num
 
         item_list.append(item)
 
