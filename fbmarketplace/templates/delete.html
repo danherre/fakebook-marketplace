@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <body>
       <nav class="navbar navbar-expand-lg navbar-light loggedout">
-        <a href="index.html" class="nav-link"><img src="images/logo2.png" height="120" width="160"></a>
+        <a href="/" class="nav-link"><img src="images/logo2.png" height="120" width="160"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,44 +27,29 @@
               </div>
             </form>
           </div>
-          {% if loggedin %}
           <div class="nav-options" style=float:right;">
             <div class="user-link" style="position:relative; float:left;">
-              <a href="user.html" class="nav-link">
+              <a href="/u/{{logname}}/" class="nav-link">
                 <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">person</i>
-                <p style="font-size: 12px; align-items: center;">{{username}}</p>
+                <p style="font-size: 12px; align-items: center;">{{logname}}</p>
               </a>
           </div>
           <div class="user-link" style="position:relative; float:right;">
-            <a href="index.html" class="nav-link">
+            <a href="/" class="nav-link">
               <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">sensor_door</i>
               <p style="font-size: 12px; align-items: center;">Sign out</p>
             </a>
           </div>
         </div>
-        {% else %}
-        <div class="nav-options" style=float:right;">
-          <div class="user-link" style="position:relative; float:left;">
-            <a href="login.html" class="nav-link">
-              <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">login</i>
-              <p style="font-size: 12px; align-items: center;">Log in</p>
-            </a>
-          </div>
-          <div class="user-link" style="position:relative; float:right;">
-            <a href="create.html" class="nav-link">
-              <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">person_add</i>
-              <p style="font-size: 12px; align-items: center;">Create account</p>
-            </a>
-          </div>
-        </div>
-        {% endif %}
       </nav>
         <hr>
         <div>
-            <h2>{{logname}}</h2>
+            <h2>&nbsp&nbsp&nbsp&nbsp {{logname}}</h2>
+            <br>                                                 
             <form action="/accounts/delete/" method="post" enctype="multipart/form-data">
-                <input type="submit" name="delete" value="confirm delete account"/>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="submit" name="delete" value="confirm delete account"/>
             </form>
+            <br>                              
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="/accounts/edit/">Back to edit account</a>
         </div>
     </body>
