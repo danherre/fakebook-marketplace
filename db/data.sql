@@ -25,22 +25,23 @@ VALUES (8, 'etkoren', 'Skateboard', 'Skateboard in decent condition', 20, 'skate
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
 VALUES (9, 'peteryu', 'Toolbox', 'Set of tools containing a hammer, wrenches, pliers, and a screwdriver', 20, 'tools.jpg', True, 'Tools');
 
+INSERT INTO reviews(reviewid, writer, writee, review, rating)
+VALUES (1, 'peteryu', 'mgropper', 'Eh, it was okay.', 4);
 
 INSERT INTO reviews(reviewid, writer, writee, review, rating)
-VALUES (1, 'amanzhan', 'mgropper', 'This product was horrible! Never trust this person.', 2);
+VALUES (2, 'amanzhan', 'mgropper', 'This product was horrible! Never trust this person.', 2);
 
 INSERT INTO reviews(reviewid, writer, writee, review, rating)
-VALUES (2, 'etkoren', 'danherre', 'Would be rated higher, if I could waste more money.', 7);
+VALUES (3, 'etkoren', 'danherre', 'Would be rated higher, if I could waste more money.', 7);
 
 INSERT INTO reviews(reviewid, writer, writee, review, rating)
-VALUES (3, 'peteryu', 'etkoren', 'This is a bot account, dont trust.', 1);
+VALUES (4, 'peteryu', 'etkoren', 'This is a bot account, dont trust.', 1);
 
 INSERT INTO reviews(reviewid, writer, writee, review, rating)
-VALUES (4, 'danherre', 'amanzhan', 'Ok.', 5);
+VALUES (5, 'danherre', 'amanzhan', 'Ok.', 5);
 
 INSERT INTO reviews(reviewid, writer, writee, review, rating)
-VALUES (5, 'mgropper', 'peteryu', 'This person lied in their review, I am totally legit!', 1);
-
+VALUES (6, 'mgropper', 'peteryu', 'This person lied in their review, I am totally legit!', 1);
 
 INSERT INTO users(username, fullname, email, filename, password)
 VALUES ('mgropper', 'Matt Gropper', 'mgropper@umich.edu', 'tempProfilePic.png','sha512$a45ffdcc71884853a2cba9e6bc55e812$c739cef1aec45c6e345c8463136dc1ae2fe19963106cf748baf87c7102937aa96928aa1db7fe1d8da6bd343428ff3167f4500c8a61095fb771957b4367868fb8');

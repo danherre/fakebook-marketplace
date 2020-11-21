@@ -131,3 +131,40 @@ def category_search(category):
     data["items"] = item_list
 
     return flask.render_template("categories.html", **data)
+
+
+#  ------- Item Info -------  #
+@fbmarketplace.app.route('/item/<item_id>/', methods=['GET'])
+def item_info(item_id):
+    if 'username' not in flask.session:
+        return flask.redirect(flask.url_for('login'))
+    response = {}
+    response["username"] = flask.session['username']
+    connection = fbmarketplace.model.get_db()
+    cur = connection.execute(
+        "SELECT * FROM items WHERE itemid=" + item_id
+    )
+    item = cur.fetchone()
+    response['item_id'] = item['itemid']
+    response['owner'] = item['owner']
+    response['item_name'] = item['name']
+    response['description'] = item['description']
+    response['price'] = item['price']
+    response['image'] = item['image']
+    response['posted'] = item['posted']
+    response['available'] = item['available']
+
+    cur = connection.execute(
+        "SELECT rating FROM reviews WHERE writee='" + item['owner'] + "'"
+    )
+    ratings = cur.fetchall()
+    # Default rating is 5. Otherwise, take the average of user ratings.
+    avg = 5 
+    if len(ratings) > 0:
+        sum = 0
+        for rating in ratings:
+            sum += rating['rating']
+
+        avg= sum / len(ratings)
+    response['user_rating'] = avg
+    return flask.render_template("transactions.html", **response)
