@@ -27,6 +27,7 @@ def get_review_data(line):
     response['writee'] = line['writee']
     response['review'] = line['review']
     response['created'] = line['created']
+    response['rating'] = line['rating']
     return response 
 
 @fbmarketplace.app.route('/api/items/', methods=['GET'])
@@ -72,7 +73,7 @@ def items_by_user(username):
             page = 0
         response['next'] = '/api/items/' + username + '/?page=' + str(page+1)
     else: # TODO: Figure out how to save file
-        if "username" not in session:
+        if "username" not in flask.session:
             abort(403)
         if "create_post" in flask.request.form:
             dummy, temp_filename = tempfile.mkstemp()
@@ -98,8 +99,15 @@ def items_by_user(username):
             response['Success'] = True
         else: #delete a post
             cur = connection.execute(
-                "DELETE FROM items"
+                "SELECT owner FROM items WHERE itemid='" + flask.request.form['itemid'] + "'"
             )
+            owner = cur.fetchone()['owner']
+            if owner != flask.session['username']:
+                abort(403)
+            cur = connection.execute(
+                "DELETE FROM items WHERE itemid='" + flask.request.form['itemid'] + "'"
+            )
+            response['Success'] = True
     return flask.jsonify(**response)
 
 
@@ -119,14 +127,14 @@ def reviews_by_user(username):
             page = 0
         response['next'] = '/api/reviews/' + username + '/?page=' + str(page+1)
     else: 
-        if "username" not in session:
+        if "username" not in flask.session:
             abort(403)
         cur = connection.execute(
             "INSERT INTO reviews (writer, writee, review, rating) VALUES ('" + 
             flask.session['username'] + "', '" + 
             username + "', '" + 
-            flask.session['review'] + "', '" + 
-            flask.session['rating'] + "')"
+            flask.request.form['review'] + "', '" + 
+            flask.request.form['rating'] + "')"
         )
         response['Success'] = True
     return flask.jsonify(**response)    
