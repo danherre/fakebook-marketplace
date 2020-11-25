@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <title>user_profile</title>
     </head>
@@ -29,7 +30,7 @@
               </div>
           </form>
         </div>
-        <div class="nav-options" style=float:right;">
+        <div class="nav-options" style="float:right;">
           <div class="user-link" style="position:relative; float:left;">
             <a href="user.html" class="nav-link">
               <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">person</i>
@@ -146,7 +147,7 @@
                           </div>
                         </div>
                       </div>
-                      
+
                     </div>
                   </div>
                 </div>
@@ -155,7 +156,7 @@
           </div>
         </section>
 
-
+        <!--
         <div class="reviewbox">
           <p class="reviewbox-user"> User: <a href="#"> SampleUser2 </a>
           </p>
@@ -176,5 +177,95 @@
           <p class="reviewbox-text"> This is a bot account, don't trust.
           </p>
         </div>
+      -->
+        <script>
+        document.body.onload = addElement;
+        num_of_pages = 0;
+        function click_on_page(page_num){
+          for(i = 1; i <= num_of_pages; i++){
+            if(i != page_num){
+              page_id = "page" + i;
+              document.getElementById(page_id).style.display = 'none';
+            }
+          }
+          page_id = "page" + page_num;
+          document.getElementById(page_id).style.display = 'block';
+        }
+        function addElement () {
+          num_of_reviews = 22;
+          num_of_reviews_so_far = 0;
+          page = "page";
+          for(i = 0; i < num_of_reviews/5; i++){
+            num_of_pages++;
+            const wholeDiv = document.createElement("div");
+            wholeDiv.setAttribute("id", page + (i + 1));
+            wholeDiv.setAttribute("class", "reviewbox-page");
+            for(j = 0; j < 5; j++){
+              if(num_of_reviews_so_far == num_of_reviews){
+                break;
+              }
+              const newDiv = document.createElement("div");
+              newDiv.setAttribute("class", "reviewbox");
+              const reviewbox_user = document.createElement("p");
+              reviewbox_user.setAttribute("class", "reviewbox-user");
+              reviewbox_user.innerText = "User: ";
+              const anchor = document.createElement('a');
+              anchor.href = "#";
+              anchor.innerText = "SampleUser" + (i*5 + j + 1);
+              const reviewbox_text = document.createElement("p");
+              reviewbox_text.setAttribute("class", "reviewbox-text");
+              reviewbox_text.innerText = "This is a bot account, don't trust.";
+              reviewbox_user.appendChild(anchor);
+              newDiv.appendChild(reviewbox_user);
+              newDiv.appendChild(reviewbox_text);
+              wholeDiv.appendChild(newDiv);
+              num_of_reviews_so_far++;
+
+            }
+            if(i != 0){
+              wholeDiv.setAttribute("style", "display:none");
+            }
+            document.body.appendChild(wholeDiv);
+
+          }
+          //document.getElementById("page2").style.display = 'none';
+          const buttonDiv = document.createElement("div");
+          buttonDiv.setAttribute("style", "padding-left:20px");
+          for(i = 1; i <= num_of_pages; i++){
+            const newButton = document.createElement("button");
+            newButton.setAttribute("type", "button");
+            newButton.setAttribute("class", "btn btn-outline-info");
+            func = "click_on_page(" + i + ");";
+            newButton.setAttribute("onclick", func);
+            newButton.innerText = "Page " + (i);
+            buttonDiv.appendChild(newButton);
+          }
+          document.body.appendChild(buttonDiv);
+
+        }
+
+        //addElement();
+        </script>
+
+    <script>
+    /*alert("why");
+    function addElement () {
+      num_of_reviews = 10;
+      nmu_of_pages = 0;
+      for(int i = 0; i < num_of_reviews; i+=5){
+        num_of_pages++;
+      }
+      const newDiv = document.createElement("div");
+      const newContent = document.createTextNode("Hi there and greetings!");
+      alert(newContent);
+      newDiv.appendChild(newContent);
+      /*function show(shown, hidden) {
+        document.getElementById(shown).style.display='block';
+        document.getElementById(hidden).style.display='none';
+        return false;
+      }*/
+    }*/
+    addElement();
+    </script>
     </body>
 </html>
