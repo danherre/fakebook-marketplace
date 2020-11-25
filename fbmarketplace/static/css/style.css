@@ -141,3 +141,7 @@ input[type="text"]::placeholder
 .search-by-category-buttons .material-icons {
     font-size: 64px;
 }
+
+.card-deck .card {
+    max-width: calc(25% - 30px);
+}

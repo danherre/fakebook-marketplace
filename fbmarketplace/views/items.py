@@ -9,11 +9,11 @@ from fbmarketplace.model import get_db
 #  ------- Feed -------  #
 @fbmarketplace.app.route('/', methods=['GET'])
 def index():
-    #if 'username' not in flask.session:
-        #return flask.redirect(flask.url_for('login'))
+    if 'username' not in flask.session:
+        return flask.redirect(flask.url_for('login'))
 
     data = {}
-    #data["username"] = flask.session['username']
+    data["username"] = flask.session['username']
 
     cursor = get_db().execute('''SELECT * FROM items ORDER BY itemid DESC LIMIT 8''')
     item_dict = cursor.fetchall()
@@ -45,7 +45,7 @@ def index():
 
     data["items"] = item_list
 
-    return flask.jsonify(**data)
+    return flask.render_template("index.html", **data)
 
 #  ------- Search -------  #
 @fbmarketplace.app.route('/search/', methods=['GET'])
@@ -99,6 +99,7 @@ def category_search(category):
 
     data = {}
     data["username"] = flask.session['username']
+    data["category"] = category
 
     cursor = get_db().execute('''SELECT * FROM items WHERE category = '%s' ORDER BY itemid DESC LIMIT 8''' % category)
     item_dict = cursor.fetchall()
@@ -125,7 +126,6 @@ def category_search(category):
             num += 1
             sum += rate["rating"]
         item["rating"] = sum/num
-
         item_list.append(item)
 
     data["items"] = item_list

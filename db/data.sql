@@ -1,17 +1,17 @@
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (1, 'mgropper', 'Apple Computer', '1 year old MacBook Pro', 100, 'apple.jpg', True, 'Tech');
+VALUES (1, 'mgropper', 'Apple Computer', '1 year old MacBook Pro', 100, 'apple.jpg', True, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
 VALUES (2, 'amanzhan', 'Bicycle', 'Old bike', 10, 'bike.jpg', True, 'Sports');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (3, 'etkoren', 'Camera', '5 year old Canon DSLR', 25, 'camera.jpeg', True, 'Tech');
+VALUES (3, 'etkoren', 'Camera', '5 year old Canon DSLR', 25, 'camera.jpeg', True, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
 VALUES (4, 'peteryu', 'Guitar', 'This is a vintage Yamaha guitar in prime condition.', 100, 'guitar.jpg', True, 'Music');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (5, 'danherre', 'Microphone', 'Unused blue yeti microphone', 50, 'mic.jpeg', True, 'Tech');
+VALUES (5, 'danherre', 'Microphone', 'Unused blue yeti microphone', 50, 'mic.jpeg', True, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
 VALUES (6, 'mgropper', 'Motorcyle', '2018 Harley Davidson', 150, 'motorcycle.jpeg', True, 'Cars');
