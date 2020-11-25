@@ -1,1 +1,265 @@
-{{logname}}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>user_profile</title>
+    </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/temp.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light loggedout">
+        <a href="/" class="nav-link"><img src="/static/uploads/logo2.png" height="120" width="160"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="float:left;">
+          <div id="cover">
+            <form method="get" action="">
+              <div class="tb">
+                <div class="td">
+                  <input type="text" placeholder="What are you looking for?" required>
+                </div>
+                <div class="td">
+                  <button type="submit" style="margin-right:0;">
+                    <i class="material-icons" style="font-size:80px;">search</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="nav-options" style=float:right;">
+            <div class="user-link" style="position:relative; float:left;">
+              <a href="/u/{{username}}/" class="nav-link">
+                <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">person</i>
+                <p style="font-size: 12px; align-items: center;">{{logname}}</p>
+              </a>
+          </div>
+          <div class="user-link" style="position:relative; float:right;">
+            <a href="/accounts/logout/" class="nav-link">
+              <i class="material-icons" style="font-size:50px; color:#ff7850; align-items: center;">sensor_door</i>
+              <p style="font-size: 12px; align-items: center;">Sign out</p>
+            </a>
+          </div>
+        </div>
+      </nav>
+        <div>
+            <h2>&nbsp&nbsp&nbsp&nbsp {{logname}}</h2>
+
+            <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp SampleUser@gmail.com</h4>
+
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="/accounts/edit/">Edit profile</a>
+            <br>
+            <br>
+            <form action="/accounts/logout/">
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="submit" value="Logout" />
+            </form>
+            <br>
+        </div>
+        <!-- this is temp code for uploading new transaction-->
+        <form action="user4.html" method="post" enctype="multipart/form-data">
+            <br>
+            <br>
+            Name <input type="text" name="price"/>
+            <input type="file" name="file">
+            <br>
+            <br>
+            Price <input type="text" name="price"/>
+            <br>
+            <br>
+            Description <input type="text" name="description"/>
+            <br>
+            <br>
+            <input type="submit" name="create_post" value="Upload new transaction"/>
+        </form>
+
+
+        <div>
+        <!-- Once the carousel works put carousel code here -->
+        </div>
+
+        <section margin-top="20px">
+          <div class="rt-container">
+            <div class="col-rt-12">
+              <div class='demo-container'>
+                <div class='carousel'>
+                  <!-- commenting out carousel arrow
+                  <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel' type='radio'>
+                  -->
+                  <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
+                  <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel' type='radio'>
+                  <div class='carousel__controls'>
+                    <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-2'>
+                      <i class="material-icons">navigate_next</i>
+                    </label>
+                  </div>
+                  <div class='carousel__controls'>
+                    <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-1'>
+                      <i class="material-icons">navigate_before</i>
+                    </label>
+                  </div>
+                  <div class='carousel__screen'>
+                    <div class='carousel__track'>
+                      <div class="carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-4">
+                        <div class="card mb-2 shadow">
+                          <img class="card-img-top" src="images/mic.jpeg "
+                            alt="Mic Photo">
+                          <div class="card-body">
+                            <h4 class="card-title">Microphone</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">User rating: 4.77</h6>
+                            <div class="buy d-flex justify-content-between align-items-center">
+                              <div class="price text-success"><h5 class="mt-4">$50/day</h5></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-4">
+                        <div class="card mb-2 shadow">
+                          <img class="card-img-top" src="images/tools.jpg "
+                            alt="Tools Photo">
+                          <div class="card-body">
+                            <h4 class="card-title">Toolbox</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">User rating: 5.0</h6>
+                            <div class="buy d-flex justify-content-between align-items-center">
+                              <div class="price text-success"><h5 class="mt-4">$20/day</h5></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-4">
+                        <div class="card mb-2 shadow">
+                          <img class="card-img-top" src="images/motorcyle.jpeg "
+                            alt="Motorcycle Photo">
+                          <div class="card-body">
+                            <h4 class="card-title">Motorcycle</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">User rating: 3.7</h6>
+                            <div class="buy d-flex justify-content-between align-items-center">
+                              <div class="price text-success"><h5 class="mt-4">$150/day</h5></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--
+        <div class="reviewbox">
+          <p class="reviewbox-user"> User: <a href="#"> SampleUser2 </a>
+          </p>
+          <p class="reviewbox-text"> This product was horrible! Never trust this person.
+          </p>
+        </div>
+
+        <div class="reviewbox">
+          <p class="reviewbox-user"> User: <a href="#"> SampleUser3 </a>
+          </p>
+          <p class="reviewbox-text"> 7/10, would be rated higher, if I could waste more money.
+          </p>
+        </div>
+
+        <div class="reviewbox">
+          <p class="reviewbox-user"> User: <a href="#"> SampleUser4 </a>
+          </p>
+          <p class="reviewbox-text"> This is a bot account, don't trust.
+          </p>
+        </div>
+      -->
+        <script>
+        document.body.onload = addElement;
+        num_of_pages = 0;
+        function click_on_page(page_num){
+          for(i = 1; i <= num_of_pages; i++){
+            if(i != page_num){
+              page_id = "page" + i;
+              document.getElementById(page_id).style.display = 'none';
+            }
+          }
+          page_id = "page" + page_num;
+          document.getElementById(page_id).style.display = 'block';
+        }
+        function addElement () {
+          num_of_reviews = 22;
+          num_of_reviews_so_far = 0;
+          page = "page";
+          for(i = 0; i < num_of_reviews/5; i++){
+            num_of_pages++;
+            const wholeDiv = document.createElement("div");
+            wholeDiv.setAttribute("id", page + (i + 1));
+            wholeDiv.setAttribute("class", "reviewbox-page");
+            for(j = 0; j < 5; j++){
+              if(num_of_reviews_so_far == num_of_reviews){
+                break;
+              }
+              const newDiv = document.createElement("div");
+              newDiv.setAttribute("class", "reviewbox");
+              const reviewbox_user = document.createElement("p");
+              reviewbox_user.setAttribute("class", "reviewbox-user");
+              reviewbox_user.innerText = "User: ";
+              const anchor = document.createElement('a');
+              anchor.href = "#";
+              anchor.innerText = "SampleUser" + (i*5 + j + 1);
+              const reviewbox_text = document.createElement("p");
+              reviewbox_text.setAttribute("class", "reviewbox-text");
+              reviewbox_text.innerText = "This is a bot account, don't trust.";
+              reviewbox_user.appendChild(anchor);
+              newDiv.appendChild(reviewbox_user);
+              newDiv.appendChild(reviewbox_text);
+              wholeDiv.appendChild(newDiv);
+              num_of_reviews_so_far++;
+
+            }
+            if(i != 0){
+              wholeDiv.setAttribute("style", "display:none");
+            }
+            document.body.appendChild(wholeDiv);
+
+          }
+          //document.getElementById("page2").style.display = 'none';
+          const buttonDiv = document.createElement("div");
+          buttonDiv.setAttribute("style", "padding-left:20px");
+          for(i = 1; i <= num_of_pages; i++){
+            const newButton = document.createElement("button");
+            newButton.setAttribute("type", "button");
+            newButton.setAttribute("class", "btn btn-outline-info");
+            func = "click_on_page(" + i + ");";
+            newButton.setAttribute("onclick", func);
+            newButton.innerText = "Page " + (i);
+            buttonDiv.appendChild(newButton);
+          }
+          document.body.appendChild(buttonDiv);
+
+        }
+
+        //addElement();
+        </script>
+
+    <script>
+    /*alert("why");
+    function addElement () {
+      num_of_reviews = 10;
+      nmu_of_pages = 0;
+      for(int i = 0; i < num_of_reviews; i+=5){
+        num_of_pages++;
+      }
+      const newDiv = document.createElement("div");
+      const newContent = document.createTextNode("Hi there and greetings!");
+      alert(newContent);
+      newDiv.appendChild(newContent);
+      /*function show(shown, hidden) {
+        document.getElementById(shown).style.display='block';
+        document.getElementById(hidden).style.display='none';
+        return false;
+      }
+    }*/
+    addElement();
+    </script>
+    </body>
+</html>
