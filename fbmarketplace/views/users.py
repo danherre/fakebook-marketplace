@@ -60,12 +60,17 @@ def user(username):
             if response['logname'] == response['username']:
                 abort(403)
             cur = connection.execute(
-                "INSERT INTO reviews (writer, writee, review, rating) VALUES ('" + 
-                response['logname'] + "', '" + 
-                response['username'] + "', '" + 
-                flask.request.form['review'] + "', '" + 
+                "INSERT INTO reviews (writer, writee, review, rating) VALUES ('" +
+                response['logname'] + "', '" +
+                response['username'] + "', '" +
+                flask.request.form['review'] + "', '" +
                 flask.request.form['rating'] + "')"
             )
+    cur = connection.execute(
+        "SELECT * FROM users WHERE username='" + username + "''"
+    )
+    user = cur.fetchall()
+    response['user'] = user
     cur = connection.execute(
         "SELECT * FROM items WHERE owner='" + username + "' ORDER BY itemid DESC"
     )
@@ -77,9 +82,8 @@ def user(username):
     reviews = cur.fetchall()
     response['reviews'] = reviews
     sum = 0
-    for review in reviews: 
+    for review in reviews:
         sum += review['rating']
     avg = sum / len(reviews)
     response['average_rating'] = avg
     return flask.render_template("user.html", **response)
-
