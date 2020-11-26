@@ -35,12 +35,13 @@ def user(username):
             )
             shutil.move(temp_filename, hash_filename)
             cur = connection.execute(
-                "INSERT INTO items (owner, name, description, price, available, image) VALUES ('" + 
+                "INSERT INTO items (owner, name, description, price, available, category, image) VALUES ('" + 
                 username + "', " + 
                 flask.request.form['name'] + "', '" + 
                 flask.request.form['description'] + "', '" + 
                 flask.request.form['price'] + "', '" + 
-                flask.request.form['available'] + "', '" + 
+                True + "', '" +
+                flask.request.form['category'] + "', '" +
                 hash_filename_basename + "')"
             )
         elif "delete_post" in flask.request.form: #delete a post
