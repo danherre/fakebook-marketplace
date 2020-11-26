@@ -25,6 +25,24 @@ VALUES (8, 'etkoren', 'Skateboard', 'Skateboard in decent condition', 20, 'skate
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
 VALUES (9, 'peteryu', 'Toolbox', 'Set of tools containing a hammer, wrenches, pliers, and a screwdriver', 20, 'tools.jpg', True, 'Tools');
 
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (10, 'peteryu', 'iPhone 8', 'iPhone 8 64GB in great condition', 10, 'iphoneimage.jpg', False, 'tech');
+
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (11, 'danherre', 'GoPro Camera', 'GoPro camera in great condition', 25, 'gopro.jpg', True, 'Tech');
+
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (12, 'amanzhan', 'Bose Headphones', 'Bose headphones, cannot hear out of 1 side', 12, 'headphones.jpg', True, 'tech');
+
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (13, 'mgropper', 'Apple Keyboard', 'Apple keyboard with a wire', 10, 'keyboard.jpeg', False, 'tech');
+
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (14, 'etkoren', 'iPad 3', 'My iPad is in horrible condition', 2, 'usedipad.jpg', True, 'tech');
+
+INSERT INTO items(itemid, owner, name, description, price, image, available, category)
+VALUES (15, 'danherre', 'YI 84 calculator', 'Use my calculator for physics class you will love it', 25, 'calculator.jpeg', True, 'tech');
+
 INSERT INTO reviews(reviewid, writer, writee, review, rating)
 VALUES (1, 'peteryu', 'mgropper', 'Eh, it was okay.', 4);
 
