@@ -66,7 +66,7 @@ def user(username):
                 flask.request.form['rating'] + "')"
             )
     cur = connection.execute(
-        "SELECT * FROM users WHERE username='" + username + "' ORDER BY itemid DESC"
+        "SELECT * FROM users WHERE username='" + username + ""
     )
     user = cur.fetchall()
     response['user'] = user
