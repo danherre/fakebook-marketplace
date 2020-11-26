@@ -35,12 +35,12 @@ def user(username):
             )
             shutil.move(temp_filename, hash_filename)
             cur = connection.execute(
-                "INSERT INTO items (owner, name, description, price, available, image) VALUES ('" + 
-                username + "', " + 
-                flask.request.form['name'] + "', '" + 
-                flask.request.form['description'] + "', '" + 
-                flask.request.form['price'] + "', '" + 
-                flask.request.form['available'] + "', '" + 
+                "INSERT INTO items (owner, name, description, price, available, image) VALUES ('" +
+                username + "', " +
+                flask.request.form['name'] + "', '" +
+                flask.request.form['description'] + "', '" +
+                flask.request.form['price'] + "', '" +
+                flask.request.form['available'] + "', '" +
                 hash_filename_basename + "')"
             )
         elif "delete_post" in flask.request.form: #delete a post
@@ -59,12 +59,17 @@ def user(username):
             if response['logname'] == response['username']:
                 abort(403)
             cur = connection.execute(
-                "INSERT INTO reviews (writer, writee, review, rating) VALUES ('" + 
-                response['logname'] + "', '" + 
-                response['username'] + "', '" + 
-                flask.request.form['review'] + "', '" + 
+                "INSERT INTO reviews (writer, writee, review, rating) VALUES ('" +
+                response['logname'] + "', '" +
+                response['username'] + "', '" +
+                flask.request.form['review'] + "', '" +
                 flask.request.form['rating'] + "')"
             )
+    cur = connection.execute(
+        "SELECT * FROM users WHERE username='" + username + "' ORDER BY itemid DESC"
+    )
+    user = cur.fetchall()
+    response['user'] = user
     cur = connection.execute(
         "SELECT * FROM items WHERE owner='" + username + "' ORDER BY itemid DESC"
     )
@@ -76,9 +81,8 @@ def user(username):
     reviews = cur.fetchall()
     response['reviews'] = reviews
     sum = 0
-    for review in reviews: 
+    for review in reviews:
         sum += review['rating']
     avg = sum / len(reviews)
     response['average_rating'] = avg
     return flask.render_template("user.html", **response)
-
