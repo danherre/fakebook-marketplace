@@ -46,11 +46,177 @@
         </div>
       </nav>
 
-          <div id="reactEntry">
-            Loading ...
+          <div>
+            <h2>&nbsp&nbsp&nbsp&nbsp {{username}}</h2>
+
+            <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{user.email}}</h4>
+            
+            {% if username == logname %}
+              
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="/accounts/edit/">Edit profile</a>
+            <br>
+            <br>
+            <form action="/accounts/logout/">
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="submit" value="Logout" />
+            </form>
+            <br>
+              
+            <form action="/u/{{username}}/" method="post" enctype="multipart/form-data">
+                <br>
+                <br>
+                Name <input type="text" name="name"/>
+                <br>
+                <br>
+                Image <input type="file" name="image">
+                <br>
+                <br>
+                Price <input type="text" name="price"/>
+                <br>
+                <br>
+                Description <input type="text" name="description"/>
+                <br>
+                <br>
+                <input type="submit" name="create_post" value="Upload new transaction"/>
+            </form>
+
+            {% else %}
+              
+            <form action="/u/{{username}}/">
+                Review <input type="text" name="review"/>
+                <br>
+                <br>
+                Rating <input type="text" name="rating"/>
+                <br>
+                <br>
+                <input type="submit" name="post_review" value="Post review" />
+            </form>
+              
+            {% endif %}
+        </div>
+        
+        <div>
+        <!-- Once the carousel works put carousel code here -->
+        </div>
+
+        <section margin-top="20px">
+          <div class="rt-container">
+            <div class="col-rt-12">
+              <div class='demo-container'>
+                <div class='carousel'>
+                  <!-- commenting out carousel arrow
+                  <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel' type='radio'>
+                  -->
+                  <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
+                  <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel' type='radio'>
+                  <div class='carousel__controls'>
+                    <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-2'>
+                      <i class="material-icons">navigate_next</i>
+                    </label>
+                  </div>
+                  <div class='carousel__controls'>
+                    <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-1'>
+                      <i class="material-icons">navigate_before</i>
+                    </label>
+                  </div>
+                  <div class='carousel__screen'>
+                    <div class='carousel__track'>
+                      
+                      {% for i in range(0,(items|length)) %}
+                        
+                      <div class="carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-4">
+                        <div class="card mb-2 shadow">
+                          <img class="card-img-top" src="{{items[i].image}}"
+                            alt="Mic Photo">
+                          <div class="card-body">
+                            <h4 class="card-title">{{items[i].name}}</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">User rating: {{average_rating}}</h6>
+                            <div class="buy d-flex justify-content-between align-items-center">
+                              <div class="price text-success"><h5 class="mt-4">${{items[i].price}}/day</h5></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        
+                      {% endfor %}
+ 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- Load JavaScript -->
-          <script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>
+        </section>
+        <script>
+        document.body.onload = addElement;
+        num_of_pages = 0;
+        function click_on_page(page_num){
+          for(i = 1; i <= num_of_pages; i++){
+            if(i != page_num){
+              page_id = "page" + i;
+              document.getElementById(page_id).style.display = 'none';
+            }
+          }
+          page_id = "page" + page_num;
+          document.getElementById(page_id).style.display = 'block';
+        }
+        function addElement () {
+          num_of_reviews = {{reviews|length}};
+          num_of_reviews_so_far = 0;
+          page = "page";
+          for(i = 0; i < num_of_reviews/5; i++){
+            num_of_pages++;
+            const wholeDiv = document.createElement("div");
+            wholeDiv.setAttribute("id", page + (i + 1));
+            wholeDiv.setAttribute("class", "reviewbox-page");
+            for(j = 0; j < 5; j++){
+              if(num_of_reviews_so_far == num_of_reviews){
+                break;
+              }
+              const newDiv = document.createElement("div");
+              newDiv.setAttribute("class", "reviewbox");
+              const reviewbox_user = document.createElement("p");
+              reviewbox_user.setAttribute("class", "reviewbox-user");
+              reviewbox_user.innerText = "User: ";
+              const anchor = document.createElement('a');
+              anchor.href = "#";
+              anchor.innerText = {{reviews[(i*5 + j)].writer}};
+              const reviewbox_text = document.createElement("p");
+              reviewbox_text.setAttribute("class", "reviewbox-text");
+              reviewbox_text.innerText = {{reviews[i].review}};
+              reviewbox_user.appendChild(anchor);
+              newDiv.appendChild(reviewbox_user);
+              newDiv.appendChild(reviewbox_text);
+              wholeDiv.appendChild(newDiv);
+              num_of_reviews_so_far++;
+
+            }
+            if(i != 0){
+              wholeDiv.setAttribute("style", "display:none");
+            }
+            document.body.appendChild(wholeDiv);
+
+          }
+          //document.getElementById("page2").style.display = 'none';
+          const buttonDiv = document.createElement("div");
+          buttonDiv.setAttribute("style", "padding-left:20px");
+          for(i = 1; i <= num_of_pages; i++){
+            const newButton = document.createElement("button");
+            newButton.setAttribute("type", "button");
+            newButton.setAttribute("class", "btn btn-outline-info");
+            func = "click_on_page(" + i + ");";
+            newButton.setAttribute("onclick", func);
+            newButton.innerText = "Page " + (i);
+            buttonDiv.appendChild(newButton);
+          }
+          document.body.appendChild(buttonDiv);
+
+        }
+        </script>
+
+    <script>
+    addElement();
+    </script>
+
 
     </body>
 </html>
