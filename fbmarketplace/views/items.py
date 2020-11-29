@@ -101,7 +101,7 @@ def category_search(category):
     data["username"] = flask.session['username']
     data["category"] = category
 
-    cursor = get_db().execute('''SELECT * FROM items WHERE category = '%s' ORDER BY itemid DESC LIMIT 8''' % category)
+    cursor = get_db().execute('''SELECT * FROM items WHERE category = '%s' ORDER BY itemid DESC''' % category)
     item_dict = cursor.fetchall()
     item_list = []
     for item in item_dict:

@@ -46,11 +46,16 @@
         <div class="row">
           <div class="col-12">
             <div class="card-deck">
-              {% set numItems = 0 %}
               {% for item in items %}
-                {% if numItems % 5 == 0 and numItems > 0 %}
+                {% if (loop.index - 1) % 4 == 0 %}
+                {% if (loop.index - 1) > 0 %}
+                  </div>
+                  </div>
                   </div>
                   <div class="row">
+                  <div class="col-12">
+                  <div class="card-deck">
+                {% endif %}
                 {% endif %}
                 <div class="card mb-2 shadow">
                   <img class="card-img-top" src="../../static/uploads/{{item.image}}">
@@ -66,7 +71,6 @@
                     </div>
                   </div>
                 </div>
-              {% set numItems = numItems + 1 %}
               {% endfor %}
             </div>
           </div>

@@ -2,37 +2,37 @@ INSERT INTO items(itemid, owner, name, description, price, image, available, cat
 VALUES (1, 'mgropper', 'Apple Computer', '1 year old MacBook Pro', 100, 'apple.jpg', True, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (2, 'amanzhan', 'Bicycle', 'Old bike', 10, 'bike.jpg', True, 'Sports');
+VALUES (2, 'amanzhan', 'Bicycle', 'Old bike', 10, 'bike.jpg', True, 'sports');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
 VALUES (3, 'etkoren', 'Camera', '5 year old Canon DSLR', 25, 'camera.jpeg', True, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (4, 'peteryu', 'Guitar', 'This is a vintage Yamaha guitar in prime condition.', 100, 'guitar.jpg', True, 'Music');
+VALUES (4, 'peteryu', 'Guitar', 'This is a vintage Yamaha guitar in prime condition.', 100, 'guitar.jpg', True, 'music');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
 VALUES (5, 'danherre', 'Microphone', 'Unused blue yeti microphone', 50, 'mic.jpeg', True, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (6, 'mgropper', 'Motorcyle', '2018 Harley Davidson', 150, 'motorcycle.jpeg', True, 'Cars');
+VALUES (6, 'mgropper', 'Motorcyle', '2018 Harley Davidson', 150, 'motorcycle.jpeg', True, 'cars');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (7, 'amanzhan', 'Paddle Boards', 'Set of 3 paddle boards', 100, 'paddle.jpg', True, 'Sports');
+VALUES (7, 'amanzhan', 'Paddle Boards', 'Set of 3 paddle boards', 100, 'paddle.jpg', True, 'sports');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (8, 'etkoren', 'Skateboard', 'Skateboard in decent condition', 20, 'skateboard.jpeg', True, 'Sports');
+VALUES (8, 'etkoren', 'Skateboard', 'Skateboard in decent condition', 20, 'skateboard.jpeg', True, 'sports');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (9, 'peteryu', 'Toolbox', 'Set of tools containing a hammer, wrenches, pliers, and a screwdriver', 20, 'tools.jpg', True, 'Tools');
+VALUES (9, 'peteryu', 'Toolbox', 'Set of tools containing a hammer, wrenches, pliers, and a screwdriver', 20, 'tools.jpg', True, 'tools');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
 VALUES (10, 'peteryu', 'iPhone 8', 'iPhone 8 64GB in great condition', 10, 'iphoneimage.jpg', False, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (11, 'danherre', 'GoPro Camera', 'GoPro camera in great condition', 25, 'gopro.jpg', True, 'Tech');
+VALUES (11, 'danherre', 'GoPro Camera', 'GoPro camera in great condition', 25, 'gopro.jpg', True, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (12, 'amanzhan', 'Bose Headphones', 'Bose headphones, cannot hear out of 1 side', 12, 'headphones.jpg', True, 'tech');
+VALUES (12, 'amanzhan', 'Bose Headphones', 'Bose headphones, cannot hear out of 1 side', 12, 'headphones.jpeg', True, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
 VALUES (13, 'mgropper', 'Apple Keyboard', 'Apple keyboard with a wire', 10, 'keyboard.jpeg', False, 'tech');
@@ -41,7 +41,7 @@ INSERT INTO items(itemid, owner, name, description, price, image, available, cat
 VALUES (14, 'etkoren', 'iPad 3', 'My iPad is in horrible condition', 2, 'usedipad.jpg', True, 'tech');
 
 INSERT INTO items(itemid, owner, name, description, price, image, available, category)
-VALUES (15, 'danherre', 'YI 84 calculator', 'Use my calculator for physics class you will love it', 25, 'calculator.jpeg', True, 'tech');
+VALUES (15, 'danherre', 'TI 84 calculator', 'Use my calculator for physics class you will love it', 25, 'calculator.jpeg', True, 'tech');
 
 INSERT INTO reviews(reviewid, writer, writee, review, rating)
 VALUES (1, 'peteryu', 'mgropper', 'Eh, it was okay.', 4);
