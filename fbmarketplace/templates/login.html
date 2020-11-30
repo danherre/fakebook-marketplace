@@ -4,11 +4,11 @@
         <title>login_page</title>
 
     </head>
-    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <body>
       <nav class="navbar navbar-expand-lg navbar-light loggedout">
-        <a href="/" class="nav-link"><img src="../../static/uploads/logo2.png" height="120" width="160"></a>
+        <a href="/" class="nav-link"><img src="../static/uploads/logo2.png" height="120" width="160"></a>
       </nav>
         <hr>
         <div>
@@ -32,12 +32,12 @@
     <head>
         <title>login_page</title>
     </head>
-    <link rel="stylesheet" href="../../static/style.css">
-    <link rel="stylesheet" href="carousel.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/carousel.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <body>
       <nav class="navbar navbar-expand-lg navbar-light loggedout">
-        <a href="/" class="nav-link"><img src="images/logo2.png" height="120" width="160"></a>
+        <a href="/" class="nav-link"><img src="../static/uploads/logo2.png" height="120" width="160"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,6 +59,26 @@
 
       </nav>
         <hr>
+        <div style="margin-left:50px">
+            <form action="/accounts/login/" method="post" enctype="multipart/form-data">
+              <div style="width:500px" class="input-group input-group-sm mb-3" >
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div style="width:500px" class="input-group input-group-sm mb-3" >
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+               <input type="submit" name="signup" value="log in"/>
+            </form>
+            <a>Don't have an account?</a><a href="/accounts/create/"><b>Sign up</b></a>
+          </div>
+
+        <!--
         <div>
             <form action="/accounts/login/" method="post" enctype="multipart/form-data">
                     &nbsp&nbsp&nbsp&nbsp Username <input type="text" name="username"/>
@@ -71,6 +91,6 @@
             </form>
             <a>Don't have an account?</a><a href="/accounts/create/"><b>Sign up</b></a>
 
-        </div>
+        </div>-->
     </body>
 </html>
