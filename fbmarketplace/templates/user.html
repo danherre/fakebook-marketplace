@@ -164,6 +164,7 @@
         }
         function addElement () {
           num_of_reviews = {{reviews|length}};
+          var theReviews = {{ reviews | tojson }};
           num_of_reviews_so_far = 0;
           page = "page";
           for(i = 0; i < num_of_reviews/5; i++){
@@ -182,10 +183,10 @@
               reviewbox_user.innerText = "User: ";
               const anchor = document.createElement('a');
               anchor.href = "#";
-              anchor.innerText = {{reviews[(i*5 + j)].writer}};
+              anchor.innerText = theReviews[(i*5 + j)].writer;
               const reviewbox_text = document.createElement("p");
               reviewbox_text.setAttribute("class", "reviewbox-text");
-              reviewbox_text.innerText = {{reviews[i].review}};
+              reviewbox_text.innerText = theReviews[i].review;
               reviewbox_user.appendChild(anchor);
               newDiv.appendChild(reviewbox_user);
               newDiv.appendChild(reviewbox_text);
