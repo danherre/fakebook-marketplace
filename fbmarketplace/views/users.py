@@ -36,11 +36,11 @@ def user(username):
             shutil.move(temp_filename, hash_filename)
             cur = connection.execute(
                 "INSERT INTO items (owner, name, description, price, available, category, image) VALUES ('" + 
-                username + "', " + 
+                username + "', '" + 
                 flask.request.form['name'] + "', '" + 
                 flask.request.form['description'] + "', '" + 
                 flask.request.form['price'] + "', '" + 
-                True + "', '" +
+                "True" + "', '" +
                 flask.request.form['category'] + "', '" +
                 hash_filename_basename + "')"
             )
