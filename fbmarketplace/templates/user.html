@@ -84,7 +84,7 @@
 
             {% else %}
 
-            <form action="/u/{{username}}/">
+            <form action="/u/{{username}}/" method="post" enctype="multipart/form-data">
                 Review <input type="text" name="review"/>
                 <br>
                 <br>
@@ -182,7 +182,7 @@
               reviewbox_user.setAttribute("class", "reviewbox-user");
               reviewbox_user.innerText = "User: ";
               const anchor = document.createElement('a');
-              anchor.href = "#";
+              anchor.href = "../" + theReviews[(i*5 + j)].writer;
               anchor.innerText = theReviews[(i*5 + j)].writer;
               const reviewbox_text = document.createElement("p");
               reviewbox_text.setAttribute("class", "reviewbox-text");
