@@ -186,7 +186,7 @@
               anchor.innerText = theReviews[(i*5 + j)].writer;
               const reviewbox_text = document.createElement("p");
               reviewbox_text.setAttribute("class", "reviewbox-text");
-              reviewbox_text.innerText = theReviews[i].review;
+              reviewbox_text.innerText = theReviews[(i*5 + j)].review;
               reviewbox_user.appendChild(anchor);
               newDiv.appendChild(reviewbox_user);
               newDiv.appendChild(reviewbox_text);
