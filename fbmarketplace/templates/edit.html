@@ -28,7 +28,7 @@
           </div>
         </div>
       </nav>
-        <div>
+        <!-- <div>
             &nbsp&nbsp&nbsp&nbsp <img src="../../static/uploads/{{pic_url}}" alt="teacher picture" style="width:32px;height:32px;"> <a href="/u/{{logname}}/">{{logname}}</a>
             <br>
             <br>
@@ -49,6 +49,33 @@
             <br>
             <br>
             &nbsp&nbsp&nbsp&nbsp <a href="/accounts/delete/">Delete account</a>
+        </div> -->
+
+        <div style="margin-left:50px">
+          <img src="../../static/uploads/{{pic_url}}" alt="teacher picture" style="width:32px;height:32px;"> <a href="/u/{{logname}}/">{{logname}}</a>
+          <form action="/accounts/edit/" method="post" enctype="multipart/form-data">
+              Photo <input type="file" name="file">
+              <br>
+              <br>
+              <div style="width:500px" class="input-group input-group-sm mb-3" >
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Full Name</span>
+                  </div>
+                  <input value="{{name}}" name="fullname" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div style="width:500px" class="input-group input-group-sm mb-3" >
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
+                  </div>
+                  <input name="email" value="{{email}}" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <input type="submit" name="update" value="submit"/>
+          </form>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp <a href="/accounts/password/">Change password</a>
+          <br>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp <a href="/accounts/delete/">Delete account</a>
         </div>
     </body>
 </html>
