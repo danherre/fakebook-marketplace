@@ -35,11 +35,11 @@ def user(username):
             )
             shutil.move(temp_filename, hash_filename)
             cur = connection.execute(
-                "INSERT INTO items (owner, name, description, price, available, category, image) VALUES ('" + 
-                username + "', '" + 
-                flask.request.form['name'] + "', '" + 
-                flask.request.form['description'] + "', '" + 
-                flask.request.form['price'] + "', '" + 
+                "INSERT INTO items (owner, name, description, price, available, category, image) VALUES ('" +
+                username + "', '" +
+                flask.request.form['name'] + "', '" +
+                flask.request.form['description'] + "', '" +
+                flask.request.form['price'] + "', '" +
                 "True" + "', '" +
                 flask.request.form['category'] + "', '" +
                 hash_filename_basename + "')"
@@ -81,9 +81,11 @@ def user(username):
     )
     reviews = cur.fetchall()
     response['reviews'] = reviews
-    sum = 0
-    for review in reviews:
-        sum += review['rating']
-    avg = sum / len(reviews)
+    avg = 0.0
+    if len(reviews) > 0:
+        sum = 0
+        for review in reviews:
+            sum += review['rating']
+        avg = sum / len(reviews)
     response['average_rating'] = avg
     return flask.render_template("user.html", **response)

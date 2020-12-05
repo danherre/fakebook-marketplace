@@ -39,7 +39,10 @@ def index():
         for rate in rating:
             num += 1
             sum += rate["rating"]
-        item["rating"] = sum/num
+        if num > 0:
+            item["rating"] = sum/num
+        else:
+            item["rating"] = 5
 
         item_list.append(item)
 
@@ -83,7 +86,10 @@ def search():
             for rate in rating:
                 num += 1
                 sum += rate["rating"]
-            item["rating"] = sum/num
+            if num > 0:
+                item["rating"] = sum/num
+            else:
+                item["rating"] = 5
 
             item_list.append(item)
 
@@ -125,7 +131,10 @@ def category_search(category):
         for rate in rating:
             num += 1
             sum += rate["rating"]
-        item["rating"] = sum/num
+        if num > 0:
+            item["rating"] = sum/num
+        else:
+            item["rating"] = 5
         item_list.append(item)
 
     data["items"] = item_list
@@ -159,7 +168,7 @@ def item_info(item_id):
     )
     ratings = cur.fetchall()
     # Default rating is 5. Otherwise, take the average of user ratings.
-    avg = 5 
+    avg = 5
     if len(ratings) > 0:
         sum = 0
         for rating in ratings:

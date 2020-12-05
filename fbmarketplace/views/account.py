@@ -4,6 +4,7 @@ import tempfile
 import hashlib
 import flask
 import fbmarketplace
+import uuid
 from fbmarketplace.model import get_db
 
 def sha256sum(filename):
@@ -86,7 +87,7 @@ def create():
         hash_txt = sha256sum(temp_filename)
         dummy, suffix = os.path.splitext(file.filename)
         hash_filename = os.path.join(
-            insta485.app.config["UPLOAD_FOLDER"],
+            fbmarketplace.app.config["UPLOAD_FOLDER"],
             hash_txt + suffix
         )
 
@@ -104,7 +105,7 @@ def create():
         cursor = get_db().execute('''INSERT INTO
                                      users(username, fullname, email,
                                      filename, password)
-                                     VALUES ('%s', '%s', '%s', '%s', '%s', %d)'''
+                                     VALUES ('%s', '%s', '%s', '%s', '%s')'''
                                   % (flask.request.form['username'],
                                      flask.request.form['fullname'],
                                      flask.request.form['email'],
@@ -129,7 +130,7 @@ def delete():
                                   % flask.session['username'])
         item_dict = cursor.fetchall()
         for items in item_dict:
-            item = items['filename']
+            item = items['image']
             os.remove(os.path.join(fbmarketplace.app.config["UPLOAD_FOLDER"], item))
         cursor = get_db().execute('''SELECT * FROM users WHERE username = '%s'
                                   ''' % flask.session['username'])
