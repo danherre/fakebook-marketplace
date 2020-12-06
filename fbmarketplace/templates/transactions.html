@@ -42,7 +42,32 @@
           </div>
         </div>
       </nav>
-        <hr>
+      <section>
+        <div class="card text-center mb-2 shadow" style="width: 50%; left: 25%;">
+          <div class="card-header" style="background-color:white">
+            <div id="item-header">
+              <div class="row">
+                <a href="/u/{{owner}}" class="btn btn-light mt-3" style="float: left;">Contact renter</a>
+              </div>    
+            </div>
+          </div>
+          <div class="card-body p-0">
+            
+            <div class="view overlay zoom">
+              <img src="../../static/uploads/{{image}}" class="img-fluid w-100" alt="smaple image">
+              <h4 class="card-title">{{item_name}}</h4>
+              <h5 class="mt-4 price text-success">${{price}}/day</h5>
+              <p class="card-text">{{description}}</p>
+            </div>
+          </div>
+          
+          <div class="card-footer text-muted" style="background-color: white">
+            <h6 class="card-subtitle mb-2 text-muted" style="float: center;">User rating: {{user_rating}}</h6>
+          </div>
+        </div>
+      </section>
+      
+        <!-- <hr>
         <div>
             <h2>&nbsp&nbsp&nbsp&nbsp {{item_name}} </h2>
             <br>
@@ -63,6 +88,6 @@
                  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="submit" name="delete" value="Contact Renter"/>
             </form>
             <br>
-        </div>
+        </div> -->
     </body>
 </html>
