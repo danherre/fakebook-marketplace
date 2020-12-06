@@ -29,27 +29,39 @@
         </div>
       </nav>
         <hr>
-        <div>
+        <div style="margin-left:50px">
             <form action="/accounts/create/" method="post" enctype="multipart/form-data">
-                    &nbsp&nbsp&nbsp&nbsp Photo &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="file" name="file">
+                    Photo &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="file" name="file">
                     <br>
                     <br>
-                    &nbsp&nbsp&nbsp&nbsp Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="fullname"/>
-                    <br>
-                    <br>
-                    &nbsp&nbsp&nbsp&nbsp Username <input type="text" name="username"/>
-                    <br>
-                    <br>
-                    &nbsp&nbsp&nbsp&nbsp Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="email"/>
-                    <br>
-                    <br>
-                    &nbsp&nbsp&nbsp&nbsp Password <input type="password" name="password"/>
-                    <br>
-                    <br>
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="submit" name="signup" value="sign up"/>
+                    <div style="width:500px" class="input-group input-group-sm mb-3" >
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm">Full name</span>
+                        </div>
+                        <input name="fullname" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div style="width:500px" class="input-group input-group-sm mb-3" >
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm">User name</span>
+                        </div>
+                        <input name="username" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div style="width:500px" class="input-group input-group-sm mb-3" >
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+                        </div>
+                        <input name="email" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div style="width:500px" class="input-group input-group-sm mb-3" >
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
+                        </div>
+                        <input name="password" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <button type="submit" name="signup" value="sign up" class="btn btn-secondary"> Sign up </button>
                 </form>
                 <br>
-                &nbsp&nbsp&nbsp&nbsp <a>Have an account? &nbsp</a><a href="/accounts/login/"><b>Log in</b></a>
+                <a>Have an account? &nbsp</a><a href="/accounts/login/"><b>Log in</b></a>
 
         </div>
     </body>
