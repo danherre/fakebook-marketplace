@@ -47,9 +47,10 @@
       </nav>
 
           <div>
-            <h2>&nbsp&nbsp&nbsp&nbsp {{username}}</h2>
+            <img src="/static/uploads/{{user.filename}}" alt="User Photo" height="200px" width="200px" border="10px" style="float: left;">
+            <h2><br>&nbsp&nbsp&nbsp&nbsp {{username}}</h2>
 
-            <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{user.email}}</h4>
+            <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{user.email}}<br><br><br><br></h4>
 
             {% if username == logname %}
 
@@ -147,17 +148,18 @@
                       {% for i in range(0,(items|length)) %}
 
                       <div class="carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-4">
-                        <div class="card mb-2 shadow">
-                          <img class="card-img-top" src="../../static/uploads/{{items[i].image}}"
-                            alt="Mic Photo">
-                          <div class="card-body">
-                            <h4 class="card-title">{{items[i].name}}</h4>
-                            <h6 class="card-subtitle mb-2 text-muted">User rating: {{average_rating}}</h6>
-                            <div class="buy d-flex justify-content-between align-items-center">
-                              <div class="price text-success"><h5 class="mt-4">${{items[i].price}}/day</h5></div>
+                        <a href="/item/{{items[i].itemid}}">
+                          <div class="card mb-2 shadow">
+                            <img class="card-img-top" src="/static/uploads/{{items[i].image}}" alt="Product Photo">
+                            <div class="card-body">
+                              <h4 class="card-title">{{items[i].name}}</h4>
+                              <h6 class="card-subtitle mb-2 text-muted">User rating: {{items[i].rating}}</h6>
+                              <div class="buy d-flex justify-content-between align-items-center">
+                                <div class="price text-success"><h5 class="mt-4">${{items[i].price}}/day</h5></div>
+                              </div>
                             </div>
-                          </div>
                         </div>
+                        </a>
                       </div>
 
                       {% endfor %}

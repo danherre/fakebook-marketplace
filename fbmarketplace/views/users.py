@@ -69,7 +69,7 @@ def user(username):
     cur = connection.execute(
         "SELECT * FROM users WHERE username='" + username + "'"
     )
-    user = cur.fetchall()
+    user = cur.fetchone()
     response['user'] = user
     cur = connection.execute(
         "SELECT * FROM items WHERE owner='" + username + "' ORDER BY itemid DESC"
