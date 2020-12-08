@@ -1,5 +1,5 @@
 # FakeBook Marketplace
-Fakebook Marketplace is an online marketplace that supports the renting of items in your area.
+Fakebook Marketplace is an online marketplace to rent items in your area which we developed as our Human-Centered Design final project.
 
 You can find a demo of the project on https://www.youtube.com/watch?v=meAdOriXr5k&feature=youtu.be
 
